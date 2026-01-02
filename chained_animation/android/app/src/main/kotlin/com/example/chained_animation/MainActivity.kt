@@ -1,0 +1,5 @@
+package com.example.chained_animation
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()

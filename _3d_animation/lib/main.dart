@@ -79,6 +79,18 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
 
+    _xController
+    ..reset()
+    ..forward();
+
+    _yController
+      ..reset()
+      ..forward();
+
+    _zController
+      ..reset()
+      ..forward();
+
     return Scaffold(
      body: SafeArea(
        child: Column(
@@ -88,12 +100,26 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             height: widthAndHeight,
             width: double.infinity,
           ),
-           Stack(
-            children: [
-              Container(color: Colors.red,
-              width: widthAndHeight,
-              height: widthAndHeight,)
-            ],
+           AnimatedBuilder(
+            animation: Listenable.merge([
+              _xController,
+              _yController,
+              _zController,
+            ]),
+            builder: (context, child){
+              return Transform(
+                alignment: Alignment.center,
+                transform: Matrix4.identity()..rotateY(0)..rotateX(0)..rotateZ(0),
+                child: Stack(
+                children: [
+                  Container(color: Colors.red,
+                  width: widthAndHeight,
+                  height: widthAndHeight,)
+                ],
+                ),
+              );
+            },
+            
            ),
          ],
        ),

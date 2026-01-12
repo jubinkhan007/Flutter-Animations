@@ -6,3 +6,7 @@ Chained Animation:
 
 Uploading Screen Recording 2026-01-12 at 6.49.48 PM.mov…
 
+
+Hero Animation
+
+[Screen_recording_20260112_222136.webm](https://github.com/user-attachments/assets/d578344d-386f-40ed-9e56-331bac9b45d9)
